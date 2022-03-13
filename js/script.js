@@ -1,9 +1,5 @@
 'use strict';
-
-/*document.getElementById('test-button').addEventListener('click', function(){
-    const links = document.querySelectorAll('.titles a');
-    console.log('links:', links);
-  });*/
+{
 
   const titleClickHandler = function(event){
     event.preventDefault();
@@ -43,7 +39,7 @@
     const targetArticle = document.querySelector(articleSelector);
     console.log(targetArticle);
   
-    /* add class 'active' to the correct article */
+    /* [DONE] add class 'active' to the correct article */
 
     targetArticle.classList.add('active')
   }
@@ -54,3 +50,43 @@
     link.addEventListener('click', titleClickHandler);
   }
 
+
+  
+  const optArticleSelector = '.post',
+  optTitleSelector = '.post-title',
+  optTitleListSelector = '.titles';
+
+  function generateTitleLinks(){
+
+  /* remove contents of titleList */
+
+  /* for each article */
+
+    /* get the article id */
+
+    /* find the title element */
+
+    /* get the title from the title element */
+
+    /* create HTML of the link */
+
+    /* insert link into titleList */
+
+
+
+  }
+
+  generateTitleLinks();
+
+
+
+
+
+
+
+
+
+
+
+
+}
