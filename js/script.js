@@ -12,12 +12,12 @@
     const activeLinks = document.querySelectorAll('.titles a.active');
 
     for(let activeLink of activeLinks){
-        activeLink.classList.remove('active');
+      activeLink.classList.remove('active');
     }
   
     /* [DONE] add class 'active' to the clicked link */
 
-    clickedElement.classList.add('active')
+    clickedElement.classList.add('active');
 
     console.log('clickedElement (with plus): ' + clickedElement);
 
@@ -26,12 +26,12 @@
     const activeArticles = document.querySelectorAll('.posts .post');
 
     for(let activeArticle of activeArticles){
-        activeArticle.classList.remove('active');
+      activeArticle.classList.remove('active');
     }
   
     /* [DONE] get 'href' attribute from the clicked link */
 
-    const articleSelector = clickedElement.getAttribute("href");
+    const articleSelector = clickedElement.getAttribute('href');
     console.log(articleSelector);
   
     /* [DONE] find the correct article using the selector (value of 'href' attribute) */
@@ -41,13 +41,14 @@
   
     /* [DONE] add class 'active' to the correct article */
 
-    targetArticle.classList.add('active')
-  }
+    targetArticle.classList.add('active');
+  };
 
   const optArticleSelector = '.post',
-  optTitleSelector = '.post-title',
-  optTitleListSelector = '.titles';
+    optTitleSelector = '.post-title',
+    optTitleListSelector = '.titles';
 
+  // eslint-disable-next-line no-inner-declarations
   function generateTitleLinks(){
 
     /* [DONE] remove contents of titleList */
