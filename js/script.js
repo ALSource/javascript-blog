@@ -47,7 +47,9 @@
   const optArticleSelector = '.post',
     optTitleSelector = '.post-title',
     optTitleListSelector = '.titles',
-    optArticleTagsSelector = '.post-tags .list';
+    optArticleTagsSelector = '.post-tags .list',
+    optArticleAuthorSelector = '.post-author';
+
 
   // eslint-disable-next-line no-inner-declarations
   function generateTitleLinks(customSelector = ''){
@@ -142,14 +144,14 @@
         html = html + HTMLlink;
 
       /* END LOOP: for each tag */
-      };
+      }
 
       /* insert HTML of all the links into the tags wrapper */
 
       tagsWrapper.innerHTML = html;
 
     /* END LOOP: for every article: */
-    };
+    }
   }
 
   generateTags();
@@ -180,7 +182,7 @@
       activeTagLink.classList.remove('active');
 
     /* END LOOP: for each active tag link */
-    };
+    }
 
     /* find all tag links with "href" attribute equal to the "href" constant */
     const tagLinks = document.querySelectorAll('a[href="' + href + '"]');
@@ -192,7 +194,7 @@
       tagLink.classList.add('active');
 
     /* END LOOP: for each found tag link */
-    };
+    }
 
     /* execute function "generateTitleLinks" with article selector as argument */
     generateTitleLinks('[data-tags~="' + tag + '"]');
@@ -209,9 +211,52 @@
       tagLink.addEventListener('click', tagClickHandler);
 
     /* END LOOP: for each link */
-    };
+    }
   }
 
   addClickListenersToTags();
+
+
+
+  function generateAuthors(){
+
+    /* find all articles */
+
+    const articles = document.querySelectorAll(optArticleSelector);
+
+    /* START LOOP: for every article: */
+
+    for (let article of articles) {
+
+      /* find tags wrapper */
+
+      const tagsWrapper = article.querySelector(optArticleAuthorSelector);
+
+      /* make html variable with empty string */
+
+      let html = '';
+
+      /* get authors from data-author attribute */
+
+      const articleAuthor = article.getAttribute('data-author');
+
+      /* generate HTML of the link */
+
+      const authorLink = '<a href="#tag-' + articleAuthor + '"<span>' + articleAuthor + '<span></a>';
+
+      /* add generated code to html variable */
+
+      html = html + authorLink;
+
+      /* insert HTML of all the links into the tags wrapper */
+
+      authorWrapper.innerHTML = html;
+
+    /* END LOOP: for every article: */
+    };
+  }
+
+  generateAuthors();
+
 
 }
