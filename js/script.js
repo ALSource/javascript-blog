@@ -142,14 +142,14 @@
         html = html + HTMLlink;
 
       /* END LOOP: for each tag */
-      }
+      };
 
       /* insert HTML of all the links into the tags wrapper */
 
       tagsWrapper.innerHTML = html;
 
     /* END LOOP: for every article: */
-    }
+    };
   }
 
   generateTags();
@@ -180,7 +180,7 @@
       activeTagLink.classList.remove('active');
 
     /* END LOOP: for each active tag link */
-    }
+    };
 
     /* find all tag links with "href" attribute equal to the "href" constant */
     const tagLinks = document.querySelectorAll('a[href="' + href + '"]');
@@ -192,7 +192,7 @@
       tagLink.classList.add('active');
 
     /* END LOOP: for each found tag link */
-    }
+    };
 
     /* execute function "generateTitleLinks" with article selector as argument */
     generateTitleLinks('[data-tags~="' + tag + '"]');
@@ -209,7 +209,7 @@
       tagLink.addEventListener('click', tagClickHandler);
 
     /* END LOOP: for each link */
-    }
+    };
   }
 
   addClickListenersToTags();
