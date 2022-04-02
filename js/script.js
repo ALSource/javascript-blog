@@ -1,5 +1,10 @@
 'use strict';
 {
+  const templates = {
+    articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML),
+    articleAuthor: Handlebars.compile(document.querySelector('#template-article-author').innerHTML),
+    articleTag: Handlebars.compile(document.querySelector('#template-article-tag').innerHTML)
+  }
 
   const titleClickHandler = function (event) {
     event.preventDefault();
@@ -82,7 +87,8 @@
 
       /* [DONE] create HTML of the link */
 
-      const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+      const linkHTMLData = {id: articleId, title: articleTitle};
+      const linkHTML = templates.articleLink(linkHTMLData);
       console.log();
 
       /* [DONE] insert link into titleList */
@@ -140,7 +146,8 @@
 
         /* generate HTML of the link */
 
-        const linkHTML = '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li>';
+        const linkHTMLData = {id: tag, tagName: tag};
+        const linkHTML = templates.articleTag(linkHTMLData);
 
         /* add generated code to html variable */
 
@@ -266,7 +273,8 @@
       const articleAuthor = article.getAttribute('data-author');
 
       /* generate HTML of the link */
-      const authorLink = '<a href="#author-' + articleAuthor + '">by <span>' + articleAuthor + '</span></a>';
+      const linkHTMLData = {id: articleAuthor, authorName: articleAuthor};
+      const linkHTML = templates.articleAuthor(linkHTMLData);
 
       /* insert HTML of all the links into the tags wrapper */
       authorWrapper.innerHTML = authorLink;
