@@ -3,7 +3,8 @@
   const templates = {
     articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML),
     articleAuthor: Handlebars.compile(document.querySelector('#template-article-author').innerHTML),
-    articleTag: Handlebars.compile(document.querySelector('#template-article-tag').innerHTML)
+    articleTag: Handlebars.compile(document.querySelector('#template-article-tag').innerHTML),
+    tagCloudLink: Handlebars.compile(document.querySelector('#template-tag-cloud-link').innerHTML)
   }
 
   const titleClickHandler = function (event) {
